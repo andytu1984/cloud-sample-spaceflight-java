@@ -6,8 +6,7 @@ using {
 service BookingService {
 
     entity Bookings    as projection on flight.Bookings
-        excluding { CustomerName, EmailAddress }
-    ;
+        excluding { CustomerName, EmailAddress };
     entity Itineraries as projection on flight.Itineraries;
 
     @readonly entity EarthRoutes   as projection on flight.EarthRoutes;
@@ -20,9 +19,7 @@ service BookingService {
     @readonly entity Spacelines  as projection on space.SpaceFlightCompanies;
     @readonly entity Planets     as projection on space.AstronomicalBodies;
 
-    // ---------------------------------------------------------------------------------------------------------------------
-    // Add projections on Customers to BookingService
-    // ---------------------------------------------------------------------------------------------------------------------
-    // entity Customers as projection on flight.Customers;
-    // entity CustomersRemote as projection on flight.CustomersRemote;
+// add projection cumstomers
+    entity Customers as projection on flight.Customers;
+    entity CustomersRemote as projection on flight.CustomersRemote;
 }
